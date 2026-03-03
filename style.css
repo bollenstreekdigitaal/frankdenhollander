@@ -385,6 +385,24 @@ p  { font-size: 1rem; line-height: 1.75; }
   .werkwijze-steps { grid-template-columns: repeat(4, 1fr); }
 }
 
+/* === LEGAL PAGES === */
+.legal-content h2 {
+  font-family: var(--serif); font-size: 1.25rem; font-weight: 600;
+  color: var(--forest); margin: 40px 0 12px;
+}
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content p { color: var(--warm-gray); margin-bottom: 14px; }
+.legal-content ul {
+  list-style: disc; padding-left: 20px;
+  margin-bottom: 14px;
+}
+.legal-content ul li { color: var(--warm-gray); margin-bottom: 6px; }
+.legal-content a { color: var(--forest); text-decoration: underline; text-underline-offset: 3px; }
+.legal-content code {
+  font-family: 'Courier New', monospace; font-size: 0.85em;
+  background: var(--cream-dark); padding: 1px 5px; border-radius: 3px;
+}
+
 /* === WHATSAPP FLOAT === */
 .wa-float {
   position: fixed; bottom: 28px; right: 28px; z-index: 200;
