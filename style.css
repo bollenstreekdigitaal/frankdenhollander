@@ -117,15 +117,12 @@ p  { font-size: 1rem; line-height: 1.75; }
   height: 72px; max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
 }
 .nav__logo {
-  display: flex; flex-direction: column; gap: 1px;
+  display: flex; align-items: center;
 }
 .nav__logo-name {
-  font-family: var(--serif); font-size: 1.15rem; font-weight: 600;
+  font-family: var(--serif); font-size: 1.45rem; font-weight: 500;
+  font-style: italic;
   color: var(--cream); letter-spacing: 0.01em; line-height: 1;
-}
-.nav__logo-sub {
-  font-size: 0.62rem; font-weight: 500;
-  color: var(--bronze-light); letter-spacing: 0.15em; text-transform: uppercase;
 }
 .nav__links { display: none; gap: 2px; }
 .nav__links a {
@@ -301,8 +298,8 @@ p  { font-size: 1rem; line-height: 1.75; }
 .contact__inner { display: grid; grid-template-columns: 1fr; gap: 64px; }
 .contact__methods { display: flex; flex-direction: column; gap: 1px; background: var(--stone); border: 1px solid var(--stone); }
 .contact__method {
-  display: flex; gap: 20px; align-items: center;
-  background: var(--cream); padding: 24px 28px;
+  display: flex; align-items: center;
+  background: var(--cream); padding: 22px 28px;
   transition: background 0.15s;
 }
 .contact__method:hover { background: var(--white); }
