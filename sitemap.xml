@@ -6,6 +6,41 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.frankdenhollander.com/buitenschilderwerk</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.frankdenhollander.com/binnenschilderwerk</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.frankdenhollander.com/houtrotsanering</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.frankdenhollander.com/kleuradvies</loc>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.frankdenhollander.com/monumentalepanden</loc>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.frankdenhollander.com/offerte</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.frankdenhollander.com/contact</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
     <loc>https://www.frankdenhollander.com/privacyverklaring</loc>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
