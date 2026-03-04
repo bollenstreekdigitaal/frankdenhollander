@@ -31,7 +31,10 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// === Form submit (fallback — use a real backend or Formspree in production) ===
+// === Form submit via Formbridge ===
+const FORMBRIDGE_URL = 'https://forms.bollenstreekdigitaal.nl/api/v1/s/f_4377553d0237';
+const formLoadTime = Date.now();
+
 function handleFormSubmit(e) {
   e.preventDefault();
   const form = e.target;
@@ -44,15 +47,44 @@ function handleFormSubmit(e) {
     return;
   }
 
-  // In production: replace with Formspree, Netlify Forms, or a server endpoint.
-  // For now, open the mailto fallback.
-  const dienst = form.dienst.value || 'niet opgegeven';
-  const telefoon = form.telefoon.value || 'niet opgegeven';
-  const body = encodeURIComponent(
-    `Naam: ${naam}\nTelefoon: ${telefoon}\nDienst: ${dienst}\n\n${bericht}`
-  );
-  const subject = encodeURIComponent(`Offerte aanvraag van ${naam}`);
-  window.location.href = `mailto:info@frankdenhollander.com?subject=${subject}&body=${body}`;
+  const btn = form.querySelector('.form-submit');
+  const origText = btn.textContent;
+  btn.textContent = 'Verzenden...';
+  btn.disabled = true;
+
+  const data = {
+    naam,
+    email,
+    telefoon: form.telefoon.value || '',
+    dienst: form.dienst.value || '',
+    bericht,
+    _ts: formLoadTime,
+    _gotcha: ''
+  };
+
+  fetch(FORMBRIDGE_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+    .then(res => {
+      if (!res.ok) throw new Error('Submission failed');
+      form.reset();
+      btn.textContent = 'Verstuurd!';
+      btn.style.background = 'var(--forest)';
+      btn.style.color = '#fff';
+      setTimeout(() => {
+        btn.textContent = origText;
+        btn.disabled = false;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 4000);
+    })
+    .catch(() => {
+      alert('Er is iets fout gegaan. Probeer het later opnieuw.');
+      btn.textContent = origText;
+      btn.disabled = false;
+    });
 }
 
 // === Scroll-triggered nav shadow ===
